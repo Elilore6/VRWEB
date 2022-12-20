@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>Hello World</title>
+    <script src="js/aframe.js"></script>
+  </head>
+  <body>
+    <a-scene
+      <a-assets>
+       <a-asset-item id="horse" src="models/Pinkhorse.glb" position="0 0 0"></a-asset-item>
+       <a-asset-item id="C" src="models/c.glb" position="0 0 0"></a-asset-item>
+       <a-asset-item id="I" src="models/I.glb" position="0 0 0"></a-asset-item>
+       <a-asset-item id="A" src="models/A.glb" position="0 0 0"></a-asset-item>
+       <a-asset-item id="O" src="models/o.glb" position="0 0 0"></a-asset-item>
+
+       </a-assets>
+ <a-entity gltf-model="#horse" animation-mixer></a-entity>
+      <a-plane position="0 -1.8 -2" rotation="-90 0 0" width="10" height="10" color="#ffc0cb"></a-plane>
+      <a-sky src="images/pinkHdri.jpg"></a-sky>
+      <a-entity rotation="0 0 0" animation="easing:linear;property: rotation; to: 0 360 0; loop: true; dur: 1500">
+        <a-dodecahedron position="1 0 -5" radius="0.4" color="#8f00ff"></a-dodecahedron>
+          <a-dodecahedron position="3 1 -5" radius="0.4" color="#9966cc"></a-dodecahedron>
+          <a-dodecahedron position="5 2 -5" radius="0.4" color="#991199"></a-dodecahedron>
+          <a-dodecahedron position="7 3 -5" radius="0.4" color="#1c39bb"></a-dodecahedron>
+      </a-entity>
+<a-entity position="-2 2 -2" animation="easing:linear;property: position; to: -2 3 -2; loop: true; dur: 1500; dir:alternate" >
+    <a-gltf-model src="#C" position="0 0 0" rotation="-90 0 0" radius="1" color="white"></a-gltf-model>
+    </a-entity>
+<a-entity position="-1 3 -2" animation="easing:linear;property: position; to: -1 2 -2; loop: true; dur: 1500; dir:alternate">
+      <a-gltf-model src="#I" position="0 0 0" rotation="-90 0 0" radius="1" color="white"></a-gltf-model>
+    </a-entity>
+<a-entity position="0 2 -2" animation="easing:linear;property: position; to: 0 3 -2; loop: true; dur: 1500; dir:alternate">
+        <a-gltf-model src="#A" position="0 0 0" rotation="90 0 0" radius="1" color="white"></a-gltf-model>
+    </a-entity>
+<a-entity position="1 3 -2" animation="easing:linear;property: position; to: 1 2 -2; loop: true; dur: 1500; dir:alternate">
+    <a-gltf-model src="#O" position="0 0 0" rotation="90 0 0" radius="1" color="white"></a-gltf-model>
+      </a-entity>
+
+    </a-scene>
+  </body>
+</html>

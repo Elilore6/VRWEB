@@ -5,7 +5,33 @@
   </head>
   <body>
     <h1>PRIMO MODEL VIEWER</h1>
-<model-viewer src="models/cavallo.glb" ar ar-scale="fixed"
-camera-controls touch-action="pan-y" xr-environment></model-viewer>
+    <model-viewer id="Sedia" camera-controls touch-action="pan-y" src="models/Sedia3.glb">
+      <div class="controls">
+        <div>Variant: <select id="variant"></select></div>
+      </div>
+    </model-viewer>
+    <script>
+    const modelViewerVariants = document.querySelector("model-viewer#Sedia");
+    const select = document.querySelector('#variant');
+
+    modelViewerVariants.addEventListener('load', () => {
+      const names = modelViewerVariants.availableVariants;
+      for (const name of names) {
+        const option = document.createElement('option');
+        option.value = name;
+        option.textContent = name;
+        select.appendChild(option);
+      }
+      // Adds a default option.
+      const option = document.createElement('option');
+        option.value = 'default';
+        option.textContent = 'Default';
+        select.appendChild(option);
+    });
+
+    select.addEventListener('input', (event) => {
+      modelViewerVariants.variantName = event.target.value === 'default' ? null : event.target.value;
+    });
+    </script>
   </body>
 </html>
